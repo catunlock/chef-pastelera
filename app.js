@@ -40,6 +40,19 @@ function renderProfile() {
         phoneEl.style.display = 'none';
     }
 
+    const profileIG = document.getElementById('profile-ig');
+    const profileIGSep = document.getElementById('profile-ig-sep');
+    if (profile.instagram) {
+        const igUrl = profile.instagram.includes('http') ? profile.instagram : 'https://www.instagram.com/' + profile.instagram.replace('@', '');
+        profileIG.href = igUrl;
+        document.getElementById('profile-ig-text').textContent = igUrl.split('/').filter(Boolean).pop();
+        profileIG.style.display = 'inline-flex';
+        profileIGSep.style.display = 'inline';
+    } else {
+        profileIG.style.display = 'none';
+        profileIGSep.style.display = 'none';
+    }
+
     const profileImg = document.getElementById('profile-img');
     if (profile.image) {
         profileImg.src = profile.image;
@@ -115,6 +128,31 @@ function renderProfile() {
         }
     } else {
         cvSection.classList.add('hidden');
+    }
+
+    // Render Footer
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.getElementById('footer-name').textContent = profile.name || '';
+
+    if (profile.contact) {
+        document.getElementById('footer-email').href = 'mailto:' + profile.contact;
+        document.getElementById('footer-email-text').textContent = profile.contact;
+    }
+
+    const footerPhone = document.getElementById('footer-phone-link');
+    if (profile.phone) {
+        footerPhone.href = 'tel:' + profile.phone.replace(/\s/g, '');
+        document.getElementById('footer-phone-text').textContent = profile.phone;
+        footerPhone.style.display = 'flex';
+    }
+
+    const footerIG = document.getElementById('footer-instagram');
+    if (profile.instagram) {
+        const igUrl = profile.instagram.includes('http') ? profile.instagram : 'https://www.instagram.com/' + profile.instagram.replace('@', '');
+        footerIG.href = igUrl;
+        const handle = '@' + igUrl.split('/').filter(Boolean).pop();
+        footerIG.querySelector('span').textContent = handle;
+        footerIG.style.display = 'flex';
     }
 }
 

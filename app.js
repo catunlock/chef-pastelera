@@ -32,6 +32,14 @@ function renderProfile() {
         contactBtn.style.display = 'none';
     }
 
+    const phoneEl = document.getElementById('profile-phone');
+    if (profile.phone) {
+        phoneEl.textContent = ` | Tel: ${profile.phone}`;
+        phoneEl.style.display = 'inline-block';
+    } else {
+        phoneEl.style.display = 'none';
+    }
+
     const profileImg = document.getElementById('profile-img');
     if (profile.image) {
         profileImg.src = profile.image;
@@ -47,27 +55,62 @@ function renderProfile() {
         
         const expContainer = document.getElementById('cv-experience');
         expContainer.innerHTML = '';
-        if (profile.experience) {
-            profile.experience.split('\n\n').forEach(block => {
-                if (block.trim()) {
-                    const item = document.createElement('div');
-                    item.className = 'cv-item';
-                    item.innerHTML = `<p>${block.trim().replace(/\n/g, '<br>')}</p>`;
-                    expContainer.appendChild(item);
-                }
+        if (Array.isArray(profile.experience)) {
+            profile.experience.forEach(job => {
+                const card = document.createElement('div');
+                card.className = 'exp-card';
+                card.innerHTML = `
+                    <div class="exp-header">
+                        <div class="exp-title-row">
+                            <h4 class="exp-role">${job.role}</h4>
+                            <span class="exp-period">${job.period}</span>
+                        </div>
+                        <div class="exp-subtitle-row">
+                            <span class="exp-company">${job.company}</span>
+                            <span class="exp-country">${job.country}</span>
+                        </div>
+                    </div>
+                    <ul class="exp-duties">
+                        ${job.duties.map(d => `<li>${d}</li>`).join('')}
+                    </ul>
+                `;
+                expContainer.appendChild(card);
             });
         }
 
         const titlesContainer = document.getElementById('cv-titles');
         titlesContainer.innerHTML = '';
-        if (profile.titles) {
-            profile.titles.split('\n').forEach(line => {
-                if (line.trim()) {
-                    const item = document.createElement('div');
-                    item.className = 'cv-item';
-                    item.innerHTML = `<p>${line.trim()}</p>`;
-                    titlesContainer.appendChild(item);
-                }
+        if (Array.isArray(profile.titles)) {
+            profile.titles.forEach(title => {
+                const item = document.createElement('div');
+                item.className = 'cv-item';
+                item.innerHTML = `
+                    <p class="title-name">${title.name} <span class="title-period">(${title.period})</span></p>
+                    <p class="title-institution">${title.institution}</p>
+                `;
+                titlesContainer.appendChild(item);
+            });
+        }
+
+        const specContainer = document.getElementById('cv-specialties');
+        specContainer.innerHTML = '';
+        if (Array.isArray(profile.specialties)) {
+            profile.specialties.forEach(spec => {
+                const item = document.createElement('div');
+                item.className = 'cv-item';
+                item.innerHTML = `<p>${spec}</p>`;
+                specContainer.appendChild(item);
+            });
+        }
+
+        const langContainer = document.getElementById('cv-languages');
+        langContainer.innerHTML = '';
+        if (Array.isArray(profile.languages)) {
+            profile.languages.forEach(lang => {
+                const item = document.createElement('div');
+                item.className = 'cv-item';
+                item.innerHTML = `<p><strong>${lang.lang}</strong> — ${lang.level}</p>`;
+                langContainer.appendChild(item);
             });
         }
     } else {
@@ -228,9 +271,26 @@ function setupEventListeners() {
             // Populate profile form
             document.getElementById('p-name').value = portfolioData.profile.name || '';
             document.getElementById('p-contact').value = portfolioData.profile.contact || '';
+            document.getElementById('p-phone').value = portfolioData.profile.phone || '';
             document.getElementById('p-bio').value = portfolioData.profile.bio || '';
-            document.getElementById('p-exp').value = portfolioData.profile.experience || '';
-            document.getElementById('p-titles').value = portfolioData.profile.titles || '';
+            
+            // Serialize experience array to text for editing
+            if (Array.isArray(portfolioData.profile.experience)) {
+                document.getElementById('p-exp').value = portfolioData.profile.experience.map(job =>
+                    `${job.role} | ${job.company} | ${job.period} | ${job.country}\n${job.duties.join('\n')}`
+                ).join('\n\n');
+            } else {
+                document.getElementById('p-exp').value = portfolioData.profile.experience || '';
+            }
+            
+            // Serialize titles array to text
+            if (Array.isArray(portfolioData.profile.titles)) {
+                document.getElementById('p-titles').value = portfolioData.profile.titles.map(t =>
+                    `${t.name} | ${t.institution} | ${t.period}`
+                ).join('\n');
+            } else {
+                document.getElementById('p-titles').value = portfolioData.profile.titles || '';
+            }
         }
     };
 
@@ -404,9 +464,37 @@ async function handleProfileSubmit(e) {
     try {
         portfolioData.profile.name = document.getElementById('p-name').value;
         portfolioData.profile.contact = document.getElementById('p-contact').value;
+        portfolioData.profile.phone = document.getElementById('p-phone').value;
         portfolioData.profile.bio = document.getElementById('p-bio').value;
-        portfolioData.profile.experience = document.getElementById('p-exp').value;
-        portfolioData.profile.titles = document.getElementById('p-titles').value;
+        
+        // Parse experience text back to structured array
+        const expText = document.getElementById('p-exp').value.trim();
+        if (expText) {
+            portfolioData.profile.experience = expText.split('\n\n').map(block => {
+                const lines = block.trim().split('\n');
+                const headerParts = lines[0].split('|').map(s => s.trim());
+                return {
+                    role: headerParts[0] || '',
+                    company: headerParts[1] || '',
+                    period: headerParts[2] || '',
+                    country: headerParts[3] || '',
+                    duties: lines.slice(1).filter(l => l.trim())
+                };
+            });
+        }
+        
+        // Parse titles text back to structured array
+        const titlesText = document.getElementById('p-titles').value.trim();
+        if (titlesText) {
+            portfolioData.profile.titles = titlesText.split('\n').filter(l => l.trim()).map(line => {
+                const parts = line.split('|').map(s => s.trim());
+                return {
+                    name: parts[0] || '',
+                    institution: parts[1] || '',
+                    period: parts[2] || ''
+                };
+            });
+        }
         
         const imgFile = document.getElementById('p-img').files[0];
         if (imgFile) {

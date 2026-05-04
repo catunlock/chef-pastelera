@@ -1,11 +1,76 @@
 {
   "profile": {
-    "name": "Yuliana, Chef Pastelera",
+    "name": "Yuliana Díaz",
     "image": "images/profile.png",
-    "bio": "Apasionada por la alta repostería y la creación de dulces momentos con ingredientes de máxima calidad.",
-    "contact": "hola@chefpastelera.com",
-    "experience": "Chef Pastelera Ejecutiva - Le Ciel Bakery (2022 - Presente)\nCreación de postres de autor y dirección de equipo.\n\nPastelera Senior - Patisserie Paris (2018 - 2022)\nEspecialista en bollería francesa y tartas tradicionales.",
-    "titles": "Master en Alta Pastelera - Le Cordon Bleu (2017)\nPremio Nacional de Repostería (2020)"
+    "bio": "Chef internacional en pastelería con formación y experiencia en la creación de postres de alta gama, arte en azúcar y dulcería tradicional. Especializada en pastelería fina, técnicas de azúcar artístico y en la preservación e innovación de recetas típicas. Creativa, perfeccionista y apasionada por el detalle. Fusiono técnicas clásicas y contemporáneas para ofrecer experiencias sensoriales únicas a través del sabor y la estética.",
+    "contact": "yulianadiaz200398@gmail.com",
+    "phone": "+34 652 95 27 47",
+    "experience": [
+      {
+        "role": "Cocinera / Responsable de Cocina",
+        "company": "Reserva Ibérica",
+        "period": "07/2024 - Presente",
+        "country": "Barcelona, España",
+        "duties": [
+          "Servicio y salida de comandas: Elaboración y pase de platos asegurando el ritmo y calidad del servicio.",
+          "Gestión de cocina: Organización de la producción diaria y supervisión directa de un ayudante.",
+          "Compras y mantenimiento: Control de pedidos a proveedores, gestión de stock y resolución de incidencias técnicas en el local."
+        ]
+      },
+      {
+        "role": "Encargada de Pastelería",
+        "company": "Pastelería y Gelatería Pin 5",
+        "period": "08/2022 - 09/2023",
+        "country": "Venezuela",
+        "duties": [
+          "Creación de producto: Diseño y elaboración de recetas de postres basadas en las preferencias de los clientes.",
+          "Supervisión de obrador: Coordinación de la producción y dirección de un ayudante de pastelería.",
+          "Control de insumos: Gestión de compras, selección de proveedores y control de calidad de materias primas."
+        ]
+      },
+      {
+        "role": "Ayudante de Panadería",
+        "company": "Obrador Panadería Artesanal",
+        "period": "02/2020 - 04/2020",
+        "country": "Venezuela",
+        "duties": [
+          "Producción de masas: Pesado, boleado y formado manual de distintas variedades de pan.",
+          "Acabado y despacho: Rebanado, empaquetado y etiquetado de producto para la venta.",
+          "Higiene: Mantenimiento y limpieza de bandejas, maquinaria y áreas de trabajo."
+        ]
+      },
+      {
+        "role": "Decoradora de Pastelería",
+        "company": "El Panal Pastelería",
+        "period": "08/2018 - 09/2019",
+        "country": "Venezuela",
+        "duties": [
+          "Decoración técnica: Acabado estético de piezas con merengue, buttercream, ganache y chantilly.",
+          "Gestión de pedidos: Trabajo en equipo para cumplir con el volumen de producción y tiempos de entrega."
+        ]
+      }
+    ],
+    "titles": [
+      {
+        "name": "Chef Internacional",
+        "institution": "Academia Culinaria de Estudios Gastronómicos de Venezuela (CEGAVEN)",
+        "period": "2021 - 2022"
+      },
+      {
+        "name": "Sub Chef Pastelería",
+        "institution": "Academia Culinaria de Estudios Gastronómicos de Venezuela (CEGAVEN)",
+        "period": "2018 - 2019"
+      }
+    ],
+    "specialties": [
+      "Arte en azúcar — Técnicas avanzadas de modelado y decoración artística",
+      "Pastelería fina — Elaboración de repostería de alta gama y técnicas internacionales",
+      "Dulcería típica venezolana — Preservación y ejecución de recetas tradicionales y regionales"
+    ],
+    "languages": [
+      { "lang": "Español", "level": "Nativo" },
+      { "lang": "Inglés", "level": "Nivel Medio" }
+    ]
   },
   "desserts": [
     {

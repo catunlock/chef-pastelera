@@ -99,6 +99,18 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
+.contact-info-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-text {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
 /* CV Section */
 .cv-section {
     padding: 3rem;
@@ -114,21 +126,124 @@ h1, h2, h3, h4 {
     gap: 4rem;
 }
 
+.cv-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3rem;
+}
+
 @media (max-width: 768px) {
-    .cv-grid {
+    .cv-grid, .cv-grid-3 {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 }
 
 .cv-heading {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
     color: var(--accent-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    letter-spacing: 0.02em;
 }
 
+/* Experience Timeline Cards */
+.cv-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.exp-card {
+    background: var(--bg-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem 1.75rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.exp-card:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.exp-header {
+    margin-bottom: 1rem;
+}
+
+.exp-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.exp-role {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.exp-period {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    white-space: nowrap;
+    background: rgba(207, 168, 116, 0.12);
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+}
+
+.exp-subtitle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.exp-company {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.exp-country {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.exp-duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-duties li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-main);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.exp-duties li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* CV Items (Titles, Specialties, Languages) */
 .cv-item {
     margin-bottom: 1.25rem;
     position: relative;
@@ -149,6 +264,23 @@ h1, h2, h3, h4 {
     color: var(--text-main);
     line-height: 1.6;
     margin: 0;
+}
+
+.title-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.title-period {
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.title-institution {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.15rem !important;
 }
 
 .contact-link {

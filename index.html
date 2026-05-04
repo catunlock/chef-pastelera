@@ -20,7 +20,10 @@
                     <div class="profile-text">
                         <h1 id="profile-name">Cargando...</h1>
                         <p id="profile-bio" class="bio"></p>
-                        <a id="profile-contact" href="#" class="contact-link">Contactar</a>
+                        <div class="contact-info-row">
+                            <a id="profile-contact" href="#" class="contact-link">Contactar</a>
+                            <span id="profile-phone" class="contact-text"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,6 +60,12 @@
                             <input type="text" id="p-contact">
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p-phone">Teléfono</label>
+                            <input type="text" id="p-phone">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="p-bio">Biografía (Breve)</label>
                         <textarea id="p-bio" rows="2"></textarea>
@@ -67,12 +76,12 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="p-exp">Experiencia (Un bloque por línea o párrafos)</label>
-                            <textarea id="p-exp" rows="5" placeholder="Chef Ejecutiva..."></textarea>
+                            <label for="p-exp">Experiencia (Formato: Puesto | Empresa | Periodo | País)</label>
+                            <textarea id="p-exp" rows="8" placeholder="Cocinera | Restaurante | 01/2024 - Presente | España&#10;Tarea 1&#10;Tarea 2&#10;&#10;Pastelera | Pastelería | 2022 - 2023 | Venezuela&#10;Tarea 1"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="p-titles">Títulos (Un título por línea)</label>
-                            <textarea id="p-titles" rows="5" placeholder="Master en Pastelería..."></textarea>
+                            <label for="p-titles">Títulos (Formato: Título | Institución | Año)</label>
+                            <textarea id="p-titles" rows="8" placeholder="Chef Internacional | CEGAVEN | 2021 - 2022"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-full">Guardar Perfil</button>
@@ -123,14 +132,22 @@
     <!-- Sección Currículum -->
     <section id="cv-section" class="container cv-section hidden">
         <h2 class="print-only-heading">Trayectoria y Experiencia</h2>
-        <div class="cv-grid">
+        
+        <h3 class="cv-heading">Experiencia Profesional</h3>
+        <div id="cv-experience" class="cv-timeline"></div>
+
+        <div class="cv-grid cv-grid-3">
             <div class="cv-column">
-                <h3 class="cv-heading">Experiencia</h3>
-                <div id="cv-experience" class="cv-content"></div>
+                <h3 class="cv-heading">Formación Académica</h3>
+                <div id="cv-titles" class="cv-content"></div>
             </div>
             <div class="cv-column">
-                <h3 class="cv-heading">Títulos Internacionales</h3>
-                <div id="cv-titles" class="cv-content"></div>
+                <h3 class="cv-heading">Especialidades</h3>
+                <div id="cv-specialties" class="cv-content"></div>
+            </div>
+            <div class="cv-column">
+                <h3 class="cv-heading">Idiomas</h3>
+                <div id="cv-languages" class="cv-content"></div>
             </div>
         </div>
     </section>

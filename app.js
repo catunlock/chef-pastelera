@@ -222,6 +222,7 @@ function setupEventListeners() {
     document.getElementById('btn-admin-toggle').onclick = () => {
         const panel = document.getElementById('admin-panel');
         panel.classList.toggle('hidden');
+        document.body.classList.toggle('admin-active');
         
         if (!panel.classList.contains('hidden')) {
             // Populate profile form
@@ -241,7 +242,6 @@ function checkAdminMode() {
     // Show admin button if running on localhost or 127.0.0.1
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.search.includes('admin=1')) {
         document.getElementById('btn-admin-toggle').classList.remove('hidden');
-        document.body.classList.add('admin-active');
     }
 }
 

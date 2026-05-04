@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Chef Pastelera</title>
+    <!-- Google Fonts: Playfair Display para títulos, Inter para textos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado del Perfil -->
+    <header class="profile-header">
+        <div class="container header-container">
+            <div class="profile-info">
+                <div class="profile-main">
+                    <img id="profile-img" src="" alt="Foto de perfil" class="profile-pic hidden">
+                    <div class="profile-text">
+                        <h1 id="profile-name">Cargando...</h1>
+                        <p id="profile-bio" class="bio"></p>
+                        <a id="profile-contact" href="#" class="contact-link">Contactar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions no-print">
+                <button id="btn-print-options" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                    Exportar PDF
+                </button>
+                <button id="btn-admin-toggle" class="btn btn-primary hidden">Panel Admin</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="container section-nav no-print">
+        <div class="nav-tabs">
+            <a href="#portfolio" class="nav-tab active">Portfolio de Postres</a>
+            <a href="#cv-section" class="nav-tab">Currículum y Experiencia</a>
+        </div>
+    </nav>
+
+    <!-- Panel de Administración -->
+    <section id="admin-panel" class="admin-panel hidden no-print">
+        <div class="container">
+            <div class="admin-card" style="margin-bottom: 2rem;">
+                <h2>Editar Perfil / CV</h2>
+                <form id="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p-name">Nombre</label>
+                            <input type="text" id="p-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="p-contact">Email de Contacto</label>
+                            <input type="text" id="p-contact">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-bio">Biografía (Breve)</label>
+                        <textarea id="p-bio" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-img">Nueva Foto de Perfil</label>
+                        <input type="file" id="p-img" accept="image/*">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p-exp">Experiencia (Un bloque por línea o párrafos)</label>
+                            <textarea id="p-exp" rows="5" placeholder="Chef Ejecutiva..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="p-titles">Títulos (Un título por línea)</label>
+                            <textarea id="p-titles" rows="5" placeholder="Master en Pastelería..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Guardar Perfil</button>
+                    <div id="profile-status" class="status-msg"></div>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h2>Añadir Nuevo Postre</h2>
+                <form id="dessert-form">
+                    <div class="form-group">
+                        <label for="d-name">Nombre del Postre *</label>
+                        <input type="text" id="d-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="d-origin">Lugar de Origen</label>
+                        <input type="text" id="d-origin" placeholder="Ej. Francia, Italia, Receta propia...">
+                    </div>
+                    <div class="form-group">
+                        <label for="d-desc">Descripción (Opcional - para postres de autor)</label>
+                        <textarea id="d-desc" rows="3"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="d-main-img">Foto Principal *</label>
+                            <input type="file" id="d-main-img" accept="image/*" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="d-sec-img">Fotos Secundarias (Opcional)</label>
+                            <input type="file" id="d-sec-img" accept="image/*" multiple>
+                        </div>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary w-full">Guardar Postre</button>
+                    <div id="upload-status" class="status-msg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Postres -->
+    <main id="portfolio" class="container" style="padding-top: 2rem;">
+        <h2 class="print-only-heading">Portfolio de Postres</h2>
+        <div id="dessert-grid" class="dessert-grid">
+            <!-- Los postres se cargarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <!-- Sección Currículum -->
+    <section id="cv-section" class="container cv-section hidden">
+        <h2 class="print-only-heading">Trayectoria y Experiencia</h2>
+        <div class="cv-grid">
+            <div class="cv-column">
+                <h3 class="cv-heading">Experiencia</h3>
+                <div id="cv-experience" class="cv-content"></div>
+            </div>
+            <div class="cv-column">
+                <h3 class="cv-heading">Títulos Internacionales</h3>
+                <div id="cv-titles" class="cv-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalles del Postre -->
+    <div id="dessert-modal" class="modal no-print">
+        <div class="modal-content">
+            <button class="close-modal" data-target="dessert-modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-col">
+                    <img id="modal-main-img" src="" alt="Postre principal">
+                    <div id="modal-sec-imgs" class="secondary-gallery">
+                        <!-- Fotos secundarias -->
+                    </div>
+                </div>
+                <div class="modal-info-col">
+                    <h2 id="modal-name"></h2>
+                    <span id="modal-origin" class="origin-tag"></span>
+                    <p id="modal-desc" class="desc-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Opciones de Impresión -->
+    <div id="print-modal" class="modal no-print">
+        <div class="modal-content print-modal-content">
+            <button class="close-modal" data-target="print-modal">&times;</button>
+            <div style="padding: 3rem; text-align: center;">
+                <h2 style="margin-bottom: 2rem; font-size: 2rem;">¿Qué deseas exportar a PDF?</h2>
+                <div class="print-options">
+                    <button class="btn btn-secondary w-full" style="margin-bottom: 1rem;" onclick="executePrint('cv')">
+                        Solo Currículum (Sin postres)
+                    </button>
+                    <button class="btn btn-secondary w-full" style="margin-bottom: 1rem;" onclick="executePrint('portfolio')">
+                        Solo Portfolio (Sin experiencia)
+                    </button>
+                    <button class="btn btn-primary w-full" onclick="executePrint('full')">
+                        Currículum Completo (Ambos)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay de carga -->
+    <div id="loading-overlay" class="loading-overlay hidden no-print">
+        <div class="spinner"></div>
+        <p>Guardando...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

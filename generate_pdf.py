@@ -522,14 +522,13 @@ def _draw_portfolio_pages(canvas, data, styles):
         return
 
     # Portfolio title page
-    canvas.showPage() if not hasattr(canvas, '_portfolio_first') else None
-    
     y = PAGE_H - 35 * mm
     
     # Title
     canvas.setFont("Playfair-Bold", 24)
     canvas.setFillColor(DARK)
-    title = "Portfolio Personal"
+    name = data["profile"].get("name", "")
+    title = f"Portfolio de {name}" if name else "Portfolio Personal"
     tw = canvas.stringWidth(title, "Playfair-Bold", 24)
     canvas.drawString((PAGE_W - tw) / 2, y, title)
     y -= 8 * mm
@@ -651,8 +650,8 @@ def _draw_portfolio_pages(canvas, data, styles):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate professional PDF CV & Portfolio")
-    parser.add_argument("-o", "--output", default="cv_yuliana_diaz.pdf",
-                        help="Output PDF filename (default: cv_yuliana_diaz.pdf)")
+    parser.add_argument("-o", "--output", default="",
+                        help="Output PDF filename (optional)")
     parser.add_argument("--cv-only", action="store_true",
                         help="Generate only the CV page (no portfolio)")
     parser.add_argument("--portfolio-only", action="store_true",
@@ -660,5 +659,12 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    output = BASE_DIR / args.output
-    generate_pdf(output, cv_only=args.cv_only, portfolio_only=args.portfolio_only)
+    if args.cv_only or args.portfolio_only:
+        output = BASE_DIR / (args.output or "cv_yuliana_diaz.pdf")
+        generate_pdf(output, cv_only=args.cv_only, portfolio_only=args.portfolio_only)
+    else:
+        print("Generando las tres versiones del documento...")
+        generate_pdf(BASE_DIR / "yuliana_diaz_cv_y_portfolio.pdf", cv_only=False, portfolio_only=False)
+        generate_pdf(BASE_DIR / "yuliana_diaz_cv.pdf", cv_only=True, portfolio_only=False)
+        generate_pdf(BASE_DIR / "yuliana_diaz_portfolio.pdf", cv_only=False, portfolio_only=True)
+        print("¡Todas las versiones han sido generadas con éxito!")

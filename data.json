@@ -81,22 +81,6 @@
   },
   "desserts": [
     {
-      "id": "1",
-      "name": "Tarta de Compostela",
-      "origin": "Galicia, España",
-      "description": "Un clásico indiscutible. Tarta tradicional a base de almendras molidas de primera calidad, huevos y azúcar, con su característico toque de limón y la inconfundible Cruz de Santiago espolvoreada en azúcar glass. Sin gluten.",
-      "mainImage": "images/tarta_santiago.png",
-      "secondaryImages": []
-    },
-    {
-      "id": "2",
-      "name": "Croissant de Mantequilla",
-      "origin": "Francia",
-      "description": "",
-      "mainImage": "images/croissant.png",
-      "secondaryImages": []
-    },
-    {
       "id": "3",
       "name": "Tarta Rogel",
       "origin": "Argentina",

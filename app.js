@@ -27,30 +27,28 @@ function renderProfile() {
     const contactBtn = document.getElementById('profile-contact');
     if (profile.contact) {
         contactBtn.href = `mailto:${profile.contact}`;
-        contactBtn.style.display = 'inline-block';
+        document.getElementById('profile-contact-text').textContent = profile.contact;
+        contactBtn.style.display = 'inline-flex';
     } else {
         contactBtn.style.display = 'none';
     }
 
     const phoneEl = document.getElementById('profile-phone');
     if (profile.phone) {
-        phoneEl.textContent = ` | Tel: ${profile.phone}`;
-        phoneEl.style.display = 'inline-block';
+        document.getElementById('profile-phone-text').textContent = profile.phone;
+        phoneEl.style.display = 'inline-flex';
     } else {
         phoneEl.style.display = 'none';
     }
 
     const profileIG = document.getElementById('profile-ig');
-    const profileIGSep = document.getElementById('profile-ig-sep');
     if (profile.instagram) {
         const igUrl = profile.instagram.includes('http') ? profile.instagram : 'https://www.instagram.com/' + profile.instagram.replace('@', '');
         profileIG.href = igUrl;
         document.getElementById('profile-ig-text').textContent = igUrl.split('/').filter(Boolean).pop();
         profileIG.style.display = 'inline-flex';
-        profileIGSep.style.display = 'inline';
     } else {
         profileIG.style.display = 'none';
-        profileIGSep.style.display = 'none';
     }
 
     const profileImg = document.getElementById('profile-img');
@@ -296,10 +294,6 @@ function setupEventListeners() {
         };
     });
 
-    document.getElementById('btn-print-options').onclick = () => {
-        document.getElementById('print-modal').classList.add('active');
-    };
-
     document.getElementById('btn-admin-toggle').onclick = () => {
         const panel = document.getElementById('admin-panel');
         panel.classList.toggle('hidden');
@@ -343,22 +337,6 @@ function checkAdminMode() {
     }
 }
 
-window.executePrint = function(mode) {
-    document.body.classList.remove('print-only-cv', 'print-only-portfolio');
-    if (mode === 'cv') {
-        document.body.classList.add('print-only-cv');
-    } else if (mode === 'portfolio') {
-        document.body.classList.add('print-only-portfolio');
-    }
-    
-    document.getElementById('print-modal').classList.remove('active');
-    window.print();
-    
-    // Reset after print dialog closes
-    setTimeout(() => {
-        document.body.classList.remove('print-only-cv', 'print-only-portfolio');
-    }, 1000);
-};
 
 // Form & Upload Logic
 let editingDessertId = null;

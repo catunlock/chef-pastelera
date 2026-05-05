@@ -203,8 +203,12 @@ def draw_cv_page(canvas, doc, data, styles):
     
     if profile.get("contact"):
         sy = _draw_sidebar_item(canvas, "Email", profile["contact"], sx, sy, sw, styles)
-    if profile.get("phone"):
-        sy = _draw_sidebar_item(canvas, "Teléfono", profile["phone"], sx, sy, sw, styles)
+    
+    # Phone number is hardcoded here for privacy on the web, but included in the PDF CV
+    phone = profile.get("phone", "+34 652 95 27 47")
+    if phone:
+        sy = _draw_sidebar_item(canvas, "Teléfono", phone, sx, sy, sw, styles)
+        
     if profile.get("instagram"):
         ig = profile["instagram"]
         handle = ig.split("/")[-1] if "http" in ig else ig.replace("@", "")

@@ -69,8 +69,14 @@
       "Dulcería típica venezolana — Preservación y ejecución de recetas tradicionales y regionales"
     ],
     "languages": [
-      { "lang": "Español", "level": "Nativo" },
-      { "lang": "Inglés", "level": "Nivel Medio" }
+      {
+        "lang": "Español",
+        "level": "Nativo"
+      },
+      {
+        "lang": "Inglés",
+        "level": "Nivel Medio"
+      }
     ]
   },
   "desserts": [
@@ -95,31 +101,35 @@
       "name": "Tarta Rogel",
       "origin": "Argentina",
       "description": "Base de capas de galletas finas y crocantes, rellenas con dulce de leche casero, decorada con picos de merengue suizo.",
-      "mainImage": "images/portfolio/tarta_rogel.jpg",
+      "mainImage": "images/portfolio/Tarta Rogel.jpg",
       "secondaryImages": []
     },
     {
       "id": "4",
-      "name": "Pie de Limón",
+      "name": "Pie de limón",
       "origin": "Internacional",
       "description": "Tartaleta de masa quebrada, rellena con crema de limón, decorada con merengue italiano y rodajas de limón.",
-      "mainImage": "images/portfolio/pie_limon.jpg",
-      "secondaryImages": []
+      "mainImage": "images/portfolio/Pie de limón.jpeg",
+      "secondaryImages": [
+        "images/portfolio/Pie de limón.jpg"
+      ]
     },
     {
       "id": "5",
-      "name": "Tarta de Chocolate",
+      "name": "Tarta de chocolate",
       "origin": "Internacional",
       "description": "Bizcocho de chocolate y cardamomo, embebido con almíbar y ron, relleno con capas de ganache suave de chocolate.",
-      "mainImage": "images/portfolio/tarta_chocolate.jpg",
-      "secondaryImages": []
+      "mainImage": "images/portfolio/Tarta de chocolate.jpg",
+      "secondaryImages": [
+        "images/portfolio/Tarta de chocolate (2).jpg"
+      ]
     },
     {
       "id": "6",
       "name": "Pastafrola",
       "origin": "Argentina",
       "description": "Tarta argentina cuya base es una masa quebrada, rellena con dulce de membrillo y decorada con tiras de masa en forma de rombo.",
-      "mainImage": "images/portfolio/pastafrola.jpg",
+      "mainImage": "images/portfolio/Pastafrola.jpg",
       "secondaryImages": []
     },
     {
@@ -127,7 +137,7 @@
       "name": "Entremet de Fresa y Coco",
       "origin": "Receta propia",
       "description": "Mousse de fresa, decorado con láminas de coco, gelatina de frambuesa y dulce de leche, con base de galleta de vainilla.",
-      "mainImage": "images/portfolio/entremet_fresa_coco.jpg",
+      "mainImage": "images/portfolio/Entremet de Fresa y Coco.jpg",
       "secondaryImages": []
     },
     {
@@ -135,55 +145,57 @@
       "name": "Tarta Charlotte",
       "origin": "Francia",
       "description": "Rellena de crema Bávara, combinando crema inglesa, nata y gelatina. Nata montada de chocolate y café. Decorada con soletillas embebidas con café, ron y figuras de chocolate y virutas.",
-      "mainImage": "images/portfolio/tarta_charlotte.jpg",
+      "mainImage": "images/portfolio/Tarta Charlotte.JPG",
       "secondaryImages": []
     },
     {
       "id": "9",
-      "name": "Tarta Selva Negra",
+      "name": "Tarta selva negra",
       "origin": "Alemania",
       "description": "Capas de bizcochuelo de chocolate embebidas en almíbar de ron e intercaladas con nata y cerezas, recubierta de crema chantillí, virutas de chocolate y cerezas.",
-      "mainImage": "images/portfolio/tarta_selva_negra.jpg",
+      "mainImage": "images/portfolio/Tarta selva negra.jpg",
       "secondaryImages": []
     },
     {
       "id": "10",
-      "name": "Brazo Gitano",
+      "name": "Brazo gitano",
       "origin": "España",
       "description": "Brazo gitano de chocolate y frutos del bosque. Bizcocho genovés, embebido con almíbar de ron, relleno con crema de mantequilla de chocolate y mermelada de frutos del bosque.",
-      "mainImage": "images/portfolio/brazo_gitano.jpg",
+      "mainImage": "images/portfolio/Brazo gitano.jpg",
       "secondaryImages": []
     },
     {
       "id": "11",
-      "name": "Tarta de Té Verde y Ajonjolí",
+      "name": "Tarta de ajonjolí y té verde",
       "origin": "Inspiración asiática",
       "description": "Bizcocho esponjoso de té verde, cocido al vapor y decorado con semillas de sésamo.",
-      "mainImage": "images/portfolio/tarta_te_verde.jpg",
+      "mainImage": "images/portfolio/Tarta de ajonjolí y té verde.jpg",
       "secondaryImages": []
     },
     {
       "id": "12",
-      "name": "Entremet Tres en Uno",
+      "name": "Entremet Tres en uno",
       "origin": "Postre de autor",
       "description": "Inspirado en una bebida refrescante y nutritiva de naranja, remolacha y zanahoria. Mousse de naranja, rellena de confitura de remolacha y confitura de zanahoria. Base de pasta sablé de avena y canela.",
-      "mainImage": "images/portfolio/entremet_tres_en_uno.jpg",
-      "secondaryImages": []
+      "mainImage": "images/portfolio/Entremet Tres en uno.jpg",
+      "secondaryImages": [
+        "images/portfolio/Entremet tres en uno 2.jpg"
+      ]
     },
     {
       "id": "13",
       "name": "Tarta Dulce de Leche y Vino Blanco",
       "origin": "Receta propia",
       "description": "Bizcocho de vainilla y naranja en capas, embebido con vino blanco, relleno con crema pastelera y dulce de leche. Decorado con almendras en láminas.",
-      "mainImage": "images/portfolio/tarta_dulce_leche.jpg",
+      "mainImage": "images/portfolio/Tarta Dulce de Leche y Vino Blanco.jpeg",
       "secondaryImages": []
     },
     {
       "id": "14",
-      "name": "Tarta Sacripantina",
+      "name": "Tarta sacripantina",
       "origin": "Italia",
       "description": "Capas de bizcocho de vainilla, embebido con almíbar, vino y ron, rellena entre capas con crema diplomática, decorada con cacahuetes tostados, chocolate blanco y chocolate negro.",
-      "mainImage": "images/portfolio/tarta_sacripantina.jpg",
+      "mainImage": "images/portfolio/Tarta sacripantina.jpg",
       "secondaryImages": []
     },
     {
@@ -191,23 +203,60 @@
       "name": "Cheesecake",
       "origin": "Internacional",
       "description": "Base de galletas integrales de manzana y canela, crema sedosa y suave de queso, decorada con figuras de chocolate y galletas.",
-      "mainImage": "images/portfolio/cheesecake.jpg",
+      "mainImage": "images/portfolio/Cheesecake.jpeg",
       "secondaryImages": []
     },
     {
       "id": "16",
-      "name": "Maqueta de Flores en Fondant",
+      "name": "Maqueta de flores en fondant",
       "origin": "Técnica decorativa",
       "description": "Decoración de flores con técnica en fondant, pasta de azúcar y glasé real.",
-      "mainImage": "images/portfolio/maqueta_fondant.jpg",
-      "secondaryImages": []
+      "mainImage": "images/portfolio/Maqueta de flores en fondant.jpg",
+      "secondaryImages": [
+        "images/portfolio/Maqueta de flores en fondant 2.jpg",
+        "images/portfolio/Maqueta de flores en fondant 3.jpg"
+      ]
     },
     {
       "id": "17",
-      "name": "Tarta de Tres Chocolates y Frutos del Bosque",
+      "name": "Tarta de chocolate y frutos del bosque",
       "origin": "Receta propia",
       "description": "Bizcocho de chocolate, naranja y canela, embebido con almíbar de cacao, ron y vino blanco, relleno con mermelada de frutos del bosque y ganache de chocolate al 55%, 75% y 80%, con distintos orígenes.",
-      "mainImage": "images/portfolio/tarta_tres_chocolates.jpg",
+      "mainImage": "images/portfolio/Tarta de chocolate y frutos del bosque.jpeg",
+      "secondaryImages": []
+    },
+    {
+      "id": "18",
+      "name": "Macarrones de maracuyá",
+      "origin": "Francia",
+      "description": "Delicados y elegantes merengues franceses a base de harina de almendra, rellenos con ganache de maracuyá.",
+      "mainImage": "images/portfolio/Macarrones de maracuyá.jpg",
+      "secondaryImages": []
+    },
+    {
+      "id": "19",
+      "name": "Red velvet",
+      "origin": "Estados Unidos",
+      "description": "Bizcocho humedo de vainilla y cacao, con frosting cremoso de queso crema y mantequilla entre capas y decoración de la misma crema.",
+      "mainImage": "images/portfolio/Red Velvet.jpg",
+      "secondaryImages": [
+        "images/portfolio/Red velvet (2).jpg"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Tarta de chocolate y vino blanco",
+      "origin": "Postre de autor",
+      "description": "Bizcocho humedo de chocolate intenso aromatizado con cardamomo recién molido, relleno de ganache de chocolate y decorado con delicado nido de chocolate, glaseado espejo de chocolate, pequeñas trufas y ganache.",
+      "mainImage": "images/portfolio/Tarta de chocolate y vino blanco.jpeg",
+      "secondaryImages": []
+    },
+    {
+      "id": "21",
+      "name": "Turrón de Doña Pepa",
+      "origin": "Perú",
+      "description": "Dulce tradicional peruano compuesto por bastones de masa crocante aromatizados con anís y ajonjolí, rellenos entre capas de mermelada de membrillo y deocrado con grageas de colores.",
+      "mainImage": "images/portfolio/Turrón de Doña Pepa.jpg",
       "secondaryImages": []
     }
   ]

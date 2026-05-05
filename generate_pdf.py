@@ -41,12 +41,13 @@ MARGIN = 15 * mm
 
 # Colors matching the website palette
 GOLD = HexColor("#cfa874")
+GOLD_DARK = HexColor("#9a733c") # Darker gold/bronze for better contrast on light backgrounds
 GOLD_LIGHT = HexColor("#f5efe6")
 DARK = HexColor("#2c2a29")
 GRAY = HexColor("#6b6764")
 LIGHT_GRAY = HexColor("#eae5de")
-BG_SIDEBAR = HexColor("#2c2a29")
-BG_SIDEBAR_TEXT = HexColor("#e8e4df")
+BG_SIDEBAR = HexColor("#f8f5f0") # Light beige for printer-friendly sidebar
+BG_SIDEBAR_TEXT = HexColor("#4a4744") # Dark text for readability
 WHITE = HexColor("#ffffff")
 
 # ─── Font Registration ──────────────────────────────────────────────────────
@@ -117,7 +118,7 @@ def create_styles():
         # Sidebar styles
         "sidebar_heading": ParagraphStyle(
             "SidebarHeading", fontName="Playfair-SemiBold", fontSize=11, leading=14,
-            textColor=GOLD, spaceAfter=3 * mm, spaceBefore=4 * mm,
+            textColor=GOLD_DARK, spaceAfter=3 * mm, spaceBefore=4 * mm,
         ),
         "sidebar_text": ParagraphStyle(
             "SidebarText", fontName="Inter", fontSize=8.5, leading=12,
@@ -125,11 +126,11 @@ def create_styles():
         ),
         "sidebar_bold": ParagraphStyle(
             "SidebarBold", fontName="Inter-SemiBold", fontSize=8.5, leading=12,
-            textColor=WHITE,
+            textColor=DARK,
         ),
         "sidebar_label": ParagraphStyle(
             "SidebarLabel", fontName="Inter-Light", fontSize=7.5, leading=10,
-            textColor=GOLD,
+            textColor=GOLD_DARK,
         ),
         # Portfolio styles
         "portfolio_title": ParagraphStyle(
@@ -216,7 +217,7 @@ def draw_cv_page(canvas, doc, data, styles):
 
     # Languages
     if profile.get("languages"):
-        sy -= 2 * mm
+        sy -= 8 * mm
         sy = _draw_sidebar_section(canvas, "IDIOMAS", sx, sy, sw, styles)
         for lang in profile["languages"]:
             text = f'{lang["lang"]} — {lang["level"]}'
@@ -224,7 +225,7 @@ def draw_cv_page(canvas, doc, data, styles):
 
     # Specialties
     if profile.get("specialties"):
-        sy -= 2 * mm
+        sy -= 8 * mm
         sy = _draw_sidebar_section(canvas, "ESPECIALIDADES", sx, sy, sw, styles)
         for spec in profile["specialties"]:
             # Split on em-dash
@@ -293,7 +294,7 @@ def draw_cv_page(canvas, doc, data, styles):
             canvas.setFillColor(GRAY)
             meta = f'{job["company"]}  ·  {job.get("country", "")}'
             canvas.drawString(mx, my, meta)
-            my -= 5 * mm
+            my -= 2.5 * mm
 
             # Duties
             for duty in job.get("duties", []):
@@ -308,7 +309,7 @@ def draw_cv_page(canvas, doc, data, styles):
                 p.drawOn(canvas, mx + 2, my - ph)
                 my -= ph + 1 * mm
             
-            my -= 3 * mm
+            my -= 6 * mm
 
     # Education / Titles
     if profile.get("titles") and my > 50 * mm:
@@ -340,36 +341,36 @@ def draw_cv_page(canvas, doc, data, styles):
 def _draw_sidebar_section(canvas, title, x, y, w, styles):
     """Draw a sidebar section heading with underline."""
     canvas.setFont("Playfair-SemiBold", 10)
-    canvas.setFillColor(GOLD)
+    canvas.setFillColor(GOLD_DARK)
     canvas.drawString(x, y, title)
     y -= 3 * mm
-    canvas.setStrokeColor(Color(1, 1, 1, 0.15))
+    canvas.setStrokeColor(Color(0, 0, 0, 0.1))
     canvas.setLineWidth(0.5)
     canvas.line(x, y, x + w, y)
-    y -= 5 * mm
+    y -= 3 * mm
     return y
 
 
 def _draw_sidebar_item(canvas, label, value, x, y, w, styles):
     """Draw a label/value pair in the sidebar."""
     canvas.setFont("Inter-Light", 7)
-    canvas.setFillColor(GOLD)
+    canvas.setFillColor(GOLD_DARK)
     canvas.drawString(x, y, label.upper())
-    y -= 3.5 * mm
+    y -= 1 * mm
     
     # Handle long values by wrapping
     style = ParagraphStyle("SVal", fontName="Inter", fontSize=8, leading=11, textColor=BG_SIDEBAR_TEXT)
     p = Paragraph(value, style)
     pw, ph = p.wrap(w, 50 * mm)
     p.drawOn(canvas, x, y - ph)
-    y -= ph + 3 * mm
+    y -= ph + 4 * mm
     return y
 
 
 def _draw_sidebar_text(canvas, text, x, y, w, styles, bold=False):
     """Draw a line of text in the sidebar."""
     font = "Inter-SemiBold" if bold else "Inter"
-    color = WHITE if bold else BG_SIDEBAR_TEXT
+    color = DARK if bold else BG_SIDEBAR_TEXT
     style = ParagraphStyle("ST", fontName=font, fontSize=8, leading=11, textColor=color)
     p = Paragraph(text, style)
     pw, ph = p.wrap(w, 50 * mm)
@@ -555,13 +556,14 @@ def _draw_portfolio_pages(canvas, data, styles):
 
     # Draw desserts in 2-column grid
     col_w = (PAGE_W - 2 * MARGIN - 10 * mm) / 2
-    img_target_h = 52 * mm
+    img_size = 65 * mm
     
     for i, dessert in enumerate(desserts):
         col = i % 2
         
         # Calculate x position
         x = MARGIN + col * (col_w + 10 * mm)
+        cx = x + col_w / 2  # center of column
         
         # New page if needed
         if col == 0 and y < 80 * mm:
@@ -578,43 +580,66 @@ def _draw_portfolio_pages(canvas, data, styles):
                 with PILImage.open(img_path) as pil_img:
                     orig_w, orig_h = pil_img.size
                 
+                img_x = cx - img_size / 2
+                img_y = card_y - img_size
+                
+                # Draw rounded rect clip
+                canvas.saveState()
+                p = canvas.beginPath()
+                p.roundRect(img_x, img_y, img_size, img_size, 3 * mm)
+                canvas.clipPath(p, stroke=0)
+                
+                # Calculate cover dimensions
                 aspect = orig_w / orig_h
-                img_w = col_w - 4 * mm
-                img_h = img_w / aspect
-                if img_h > img_target_h:
-                    img_h = img_target_h
-                    img_w = img_h * aspect
-
-                canvas.drawImage(str(img_path), x + 2 * mm, card_y - img_h,
-                                 width=img_w, height=img_h,
-                                 preserveAspectRatio=True, mask='auto')
-                card_y -= img_h + 3 * mm
+                if aspect > 1: # Landscape
+                    draw_h = img_size
+                    draw_w = draw_h * aspect
+                    draw_x = img_x - (draw_w - img_size) / 2
+                    draw_y = img_y
+                else: # Portrait
+                    draw_w = img_size
+                    draw_h = draw_w / aspect
+                    draw_x = img_x
+                    draw_y = img_y - (draw_h - img_size) / 2
+                    
+                canvas.drawImage(str(img_path), draw_x, draw_y, width=draw_w, height=draw_h, preserveAspectRatio=True)
+                canvas.restoreState()
+                
+                # Draw gold/light-gray border
+                canvas.setStrokeColor(LIGHT_GRAY)
+                canvas.setLineWidth(1.5)
+                canvas.roundRect(img_x, img_y, img_size, img_size, 3 * mm)
+                
+                card_y -= img_size + 6 * mm
             except Exception as e:
                 card_y -= 5 * mm
         
         # Name
-        canvas.setFont("Playfair-SemiBold", 10)
+        canvas.setFont("Playfair-SemiBold", 11)
         canvas.setFillColor(DARK)
-        canvas.drawString(x + 2 * mm, card_y, dessert.get("name", ""))
-        card_y -= 4 * mm
+        name_str = dessert.get("name", "")
+        tw = canvas.stringWidth(name_str, "Playfair-SemiBold", 11)
+        canvas.drawString(cx - tw / 2, card_y, name_str)
+        card_y -= 5 * mm
 
         # Origin
         origin = dessert.get("origin", "")
         if origin:
-            canvas.setFont("Inter-Medium", 7)
+            canvas.setFont("Inter-Medium", 7.5)
             canvas.setFillColor(GOLD)
-            canvas.drawString(x + 2 * mm, card_y, origin.upper())
-            card_y -= 4 * mm
+            tw = canvas.stringWidth(origin.upper(), "Inter-Medium", 7.5)
+            canvas.drawString(cx - tw / 2, card_y, origin.upper())
+            card_y -= 5 * mm
 
         # Description
         desc = dessert.get("description", "")
         if desc:
-            desc_style = ParagraphStyle("D", fontName="Inter", fontSize=7.5, leading=10.5,
-                                        textColor=GRAY)
+            desc_style = ParagraphStyle("D", fontName="Inter", fontSize=8, leading=11.5,
+                                        textColor=GRAY, alignment=TA_CENTER)
             p = Paragraph(desc, desc_style)
             pw, ph = p.wrap(col_w - 6 * mm, 60 * mm)
-            p.drawOn(canvas, x + 2 * mm, card_y - ph)
-            card_y -= ph + 2 * mm
+            p.drawOn(canvas, cx - pw / 2, card_y - ph)
+            card_y -= ph + 4 * mm
 
         # Update y for next row (only on right column)
         if col == 1:

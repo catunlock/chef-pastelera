@@ -622,6 +622,51 @@ body.admin-active .admin-actions {
     opacity: 0.8;
 }
 
+/* Contact Form Section */
+.contact-section {
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: 3rem;
+}
+
+.contact-heading {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.contact-subheading {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.contact-form .btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
 /* Footer */
 .site-footer {
     background-color: var(--text-main);
@@ -741,7 +786,11 @@ label {
     color: var(--text-main);
 }
 
-input[type="text"], textarea {
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="date"], 
+textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--border-color);
@@ -752,7 +801,11 @@ input[type="text"], textarea {
     background-color: #faf9f6;
 }
 
-input[type="text"]:focus, textarea:focus {
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+input[type="date"]:focus, 
+textarea:focus {
     outline: none;
     border-color: var(--accent-color);
     background-color: var(--white);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <!-- Google Fonts: Playfair Display para títulos, Inter para textos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Encabezado del Perfil (Hero centrado) -->
     <header class="profile-header">
@@ -23,15 +27,28 @@
             <p id="profile-bio" class="hero-bio"></p>
             <div class="hero-contact">
                 <a id="profile-contact" href="#" class="hero-contact-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
                     <span id="profile-contact-text">Contactar</span>
                 </a>
                 <span id="profile-phone" class="hero-contact-item" style="display:none;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
                     <span id="profile-phone-text"></span>
                 </span>
                 <a id="profile-ig" href="#" target="_blank" class="hero-contact-item" style="display:none;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
                     <span id="profile-ig-text"></span>
                 </a>
             </div>
@@ -43,13 +60,19 @@
             <div class="nav-tabs">
                 <a href="#portfolio" class="nav-tab active">Portfolio de Postres</a>
                 <a href="#cv-section" class="nav-tab">Currículum y Experiencia</a>
+                <a href="#contact-section" class="nav-tab">Encargos</a>
             </div>
         </div>
     </nav>
 
     <!-- Floating Admin Button -->
     <button id="btn-admin-toggle" class="fab-admin hidden no-print" title="Panel Admin">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+            <circle cx="12" cy="12" r="3" />
+        </svg>
     </button>
 
     <!-- Panel de Administración -->
@@ -85,11 +108,13 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="p-exp">Experiencia (Formato: Puesto | Empresa | Periodo | País)</label>
-                            <textarea id="p-exp" rows="8" placeholder="Cocinera | Restaurante | 01/2024 - Presente | España&#10;Tarea 1&#10;Tarea 2&#10;&#10;Pastelera | Pastelería | 2022 - 2023 | Venezuela&#10;Tarea 1"></textarea>
+                            <textarea id="p-exp" rows="8"
+                                placeholder="Cocinera | Restaurante | 01/2024 - Presente | España&#10;Tarea 1&#10;Tarea 2&#10;&#10;Pastelera | Pastelería | 2022 - 2023 | Venezuela&#10;Tarea 1"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="p-titles">Títulos (Formato: Título | Institución | Año)</label>
-                            <textarea id="p-titles" rows="8" placeholder="Chef Internacional | CEGAVEN | 2021 - 2022"></textarea>
+                            <textarea id="p-titles" rows="8"
+                                placeholder="Chef Internacional | CEGAVEN | 2021 - 2022"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-full">Guardar Perfil</button>
@@ -140,7 +165,7 @@
     <!-- Sección Currículum -->
     <section id="cv-section" class="container cv-section hidden">
 
-        
+
         <h3 class="cv-heading">Experiencia Profesional</h3>
         <div id="cv-experience" class="cv-timeline"></div>
 
@@ -180,30 +205,98 @@
         </div>
     </div>
 
+    <!-- Contact Form Section -->
+    <section id="contact-section" class="container contact-section">
+        <div class="contact-card">
+            <h2 class="contact-heading">Haz tu encargo</h2>
+            <p class="contact-subheading">Especializada en tartas personalizadas y repostería artesanal para cumpleaños, bodas o celebraciones íntimas. Déjame un mensaje con los detalles de tu evento.</p>
 
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="825cc07c-e77a-44c9-8bcc-2046e1cc7eb2">
+
+                <!-- Optional: Redirection after successful submission -->
+                <!-- <input type="hidden" name="redirect" value="https://chefyuliana.com/gracias"> -->
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Teléfono (Opcional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Fecha del evento (Opcional)</label>
+                        <input type="date" id="date" name="fecha_evento">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">¿Qué estás buscando?</label>
+                    <input type="text" id="subject" name="subject" required
+                        placeholder="Ej. Tarta de cumpleaños, pastel de boda, mesa dulce...">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje / Detalles adicionales</label>
+                    <textarea id="message" name="message" rows="4" required
+                        placeholder="Cuéntame para cuántas personas es, si hay alergias, etc."></textarea>
+                </div>
+
+                <!-- Web3Forms Honeypot for Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <button type="submit" class="btn btn-primary w-full">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
     <!-- Footer / Contacto -->
     <footer id="site-footer" class="site-footer">
         <div class="container footer-content">
             <div class="footer-cta">
                 <h2>¿Te gustaría probar mis creaciones?</h2>
-                <p>Estoy disponible para eventos, encargos personalizados y colaboraciones. ¡No dudes en contactarme!</p>
+                <p>Especializada en tartas y dulces artesanales para cumpleaños, bodas y celebraciones íntimas. ¡Haz tu encargo personalizado!</p>
             </div>
             <div class="footer-links">
                 <a id="footer-email" href="#" class="footer-link" title="Email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
                     <span id="footer-email-text">Contactar</span>
                 </a>
                 <a id="footer-phone-link" href="#" class="footer-link" title="Teléfono" style="display:none;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
                     <span id="footer-phone-text"></span>
                 </a>
-                <a id="footer-instagram" href="#" target="_blank" class="footer-link" title="Instagram" style="display:none;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a id="footer-instagram" href="#" target="_blank" class="footer-link" title="Instagram"
+                    style="display:none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
                     <span>Instagram</span>
                 </a>
             </div>
             <div class="footer-bottom">
-                <p>© <span id="footer-year"></span> <span id="footer-name"></span> · Chef Internacional en Pastelería</p>
+                <p>© <span id="footer-year"></span> <span id="footer-name"></span> · Chef Internacional en Pastelería
+                </p>
             </div>
         </div>
     </footer>
@@ -216,4 +309,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

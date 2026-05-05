@@ -225,7 +225,7 @@ function openModal(dessert) {
 function setupEventListeners() {
     // Tabs & Scroll Spy Logic
     const tabs = document.querySelectorAll('.nav-tab');
-    const sections = document.querySelectorAll('main#portfolio, section#cv-section');
+    const sections = document.querySelectorAll('main#portfolio, section#cv-section, section#contact-section');
     const headerOffset = 80;
     
     // Smooth scrolling when clicking a tab
@@ -259,7 +259,7 @@ function setupEventListeners() {
         
         // Ensure that if we're at the very bottom, the last section is active
         if ((window.innerHeight + Math.round(window.pageYOffset)) >= document.body.offsetHeight - 2) {
-            current = '#cv-section';
+            current = '#contact-section';
         }
 
         tabs.forEach(tab => {

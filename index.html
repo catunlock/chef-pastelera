@@ -4,70 +4,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Chef Pastelera</title>
-    <!-- Google Fonts: Playfair Display para títulos, Inter para textos -->
+    <title>Yuliana Díaz · Chef Pastelera</title>
+    <meta name="description" content="Portfolio de Yuliana Díaz, chef internacional en pastelería. Tartas personalizadas, arte en azúcar y dulcería artesanal en Barcelona.">
+    <meta name="theme-color" content="#fbf7f1">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23fbf7f1' stroke='%23a8814f' stroke-width='2'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='26' fill='%232f2420'%3EYD%3C/text%3E%3C/svg%3E">
+    <script>document.documentElement.classList.add('js');</script>
+    <!-- Google Fonts: Cormorant Garamond (títulos), Jost (texto), Pinyon Script (acentos caligráficos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Encabezado del Perfil (Hero centrado) -->
-    <header class="profile-header">
-        <div class="container header-hero">
-            <div class="hero-photo-wrapper">
-                <img id="profile-img" src="" alt="Foto de perfil" class="hero-photo hidden">
-            </div>
-            <h1 id="profile-name" class="hero-name">Cargando...</h1>
-            <p class="hero-subtitle">Chef Internacional en Pastelería</p>
-            <div class="hero-accent"></div>
-            <p id="profile-bio" class="hero-bio"></p>
-            <div class="hero-contact">
-                <a id="profile-contact" href="#" class="hero-contact-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                    <span id="profile-contact-text">Contactar</span>
-                </a>
-                <span id="profile-phone" class="hero-contact-item" style="display:none;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    <span id="profile-phone-text"></span>
-                </span>
-                <a id="profile-ig" href="#" target="_blank" class="hero-contact-item" style="display:none;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                    <span id="profile-ig-text"></span>
-                </a>
-            </div>
-        </div>
-    </header>
+    <!-- Sprite de ilustraciones de línea fina -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-whisk" viewBox="0 0 60 120">
+            <g fill="none" stroke="#a8814f" stroke-width="1.8" stroke-linecap="round">
+                <path d="M26 70C2 52 6 6 30 5C54 6 58 52 34 70" />
+                <path d="M27 70C12 52 16 14 30 13C44 14 48 52 33 70" />
+                <path d="M29 70C22 52 24 22 30 21C36 22 38 52 31 70" />
+                <path d="M30 70V5" opacity=".45" />
+            </g>
+            <rect x="22" y="65" width="16" height="10" rx="2.5" fill="#f3e7d3" stroke="#a8814f" stroke-width="1.8" />
+            <rect x="24" y="74" width="12" height="42" rx="6" fill="#fbf4ea" stroke="#a8814f" stroke-width="1.8" />
+            <path d="M30 82v26" stroke="#a8814f" stroke-width="1" opacity=".4" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-rolling-pin" viewBox="0 0 160 44">
+            <rect x="5" y="16" width="28" height="12" rx="6" fill="#f3e7d3" stroke="#a8814f" stroke-width="1.8" />
+            <rect x="127" y="16" width="28" height="12" rx="6" fill="#f3e7d3" stroke="#a8814f" stroke-width="1.8" />
+            <rect x="29" y="6" width="102" height="32" rx="11" fill="#fbf4ea" stroke="#a8814f" stroke-width="1.8" />
+            <path d="M44 15q20-3 40 0M92 29q16 3 28 0M50 26q10 2 20 0" fill="none" stroke="#a8814f" stroke-width="1" opacity=".45" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-piping-bag" viewBox="0 0 100 120">
+            <path d="M14 18Q50 8 86 18L58 92H42Z" fill="#fbf4ea" />
+            <path d="M25 46Q50 40 75 46L58 92H42Z" fill="#efd3cf" />
+            <path d="M14 18Q50 8 86 18L58 92H42Z" fill="none" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M10 13Q50 2 90 13L88 21Q50 11 12 21Z" fill="#dfe6d7" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M42 92h16l-3 16h-10Z" fill="#f3e7d3" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M47.5 93l-.8 14M52.5 93l.8 14" stroke="#a8814f" stroke-width="1" />
+            <path d="M32 30q4 20 13 40" fill="none" stroke="#a8814f" stroke-width="1" stroke-linecap="round" opacity=".4" />
+        </symbol>
+        <symbol id="i-spoon" viewBox="0 0 40 130">
+            <rect x="16.5" y="44" width="7" height="82" rx="3.5" fill="#fbf4ea" stroke="#a8814f" stroke-width="1.8" />
+            <ellipse cx="20" cy="26" rx="15" ry="22" fill="#f3e7d3" stroke="#a8814f" stroke-width="1.8" />
+            <ellipse cx="20" cy="27" rx="8.5" ry="13.5" fill="none" stroke="#a8814f" stroke-width="1" opacity=".45" />
+        </symbol>
+        <symbol id="i-mitt" viewBox="0 0 90 110">
+            <path d="M24 86L22 52C13 52 5 45 7 35C9 26 20 26 24 34L26 28C28 12 40 4 54 6C70 8 80 22 78 40L74 86Z" fill="#eef1e8" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M34 20l36 36M30 36l38 38M30 56l26 26M48 12l26 26" stroke="#a8814f" stroke-width=".9" opacity=".35" />
+            <rect x="18" y="82" width="62" height="20" rx="4" fill="#fbf4ea" stroke="#a8814f" stroke-width="1.8" />
+            <path d="M18 92h62" stroke="#a8814f" stroke-width="1" opacity=".45" />
+        </symbol>
+        <symbol id="i-cupcake" viewBox="0 0 100 110">
+            <path d="M22 60h56l-8 44H30Z" fill="#f6e2df" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M33 62l4 40M43 62l2 40M57 62l-2 40M67 62l-4 40" stroke="#a8814f" stroke-width="1" opacity=".45" />
+            <path d="M18 63C7 62 8 46 20 46C16 34 30 26 38 32C40 18 60 16 64 30C74 26 86 36 80 46C92 48 90 64 80 63Z" fill="#fffaf2" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M24 54q14-8 26-2t28-2M34 40q10-6 22 0" fill="none" stroke="#a8814f" stroke-width="1" opacity=".45" stroke-linecap="round" />
+            <path d="M50 24q2-10 10-15" fill="none" stroke="#a8814f" stroke-width="1.6" stroke-linecap="round" />
+            <circle cx="50" cy="26" r="7" fill="#9e2b35" stroke="#a8814f" stroke-width="1.4" />
+            <circle cx="47.6" cy="23.6" r="1.6" fill="#fff" opacity=".7" />
+        </symbol>
+        <symbol id="i-macaron" viewBox="0 0 100 76">
+            <path d="M10 46h80v6C90 70 10 70 10 52Z" fill="currentColor" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <rect x="13" y="36" width="74" height="12" rx="6" fill="#fffaf2" stroke="#a8814f" stroke-width="1.6" />
+            <path d="M10 36C10 6 90 6 90 36Z" fill="currentColor" stroke="#a8814f" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M12 36q4.75 4 9.5 0t9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0" fill="none" stroke="#a8814f" stroke-width="1.2" stroke-linejoin="round" />
+            <path d="M28 20q10-6 22-6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".55" />
+        </symbol>
+        <symbol id="i-cherry" viewBox="0 0 60 70">
+            <path d="M30 36C30 22 34 10 44 4" fill="none" stroke="#a8814f" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M40 8C46 2 56 4 58 10C52 14 44 14 40 8Z" fill="#dfe6d7" stroke="#a8814f" stroke-width="1.5" stroke-linejoin="round" />
+            <circle cx="30" cy="50" r="15" fill="#9e2b35" stroke="#7a1f28" stroke-width="1.2" />
+            <path d="M21 45q3-6 9-7" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".6" />
+        </symbol>
+        <symbol id="i-toque" viewBox="0 0 120 100">
+            <path d="M32 58l2 34h54l2-34Z" fill="#fffdf9" stroke="#a8814f" stroke-width="2" stroke-linejoin="round" />
+            <path d="M48 70v18M62 70v18M76 70v18" stroke="#a8814f" stroke-width="1" opacity=".4" stroke-linecap="round" />
+            <path d="M32 66C12 64 8 36 30 34C30 14 52 4 64 18C78 4 108 14 102 38C116 44 110 66 90 66Z" fill="#fffdf9" stroke="#a8814f" stroke-width="2" stroke-linejoin="round" />
+            <path d="M44 40q6-10 16-10M70 34q8-4 14 2" fill="none" stroke="#a8814f" stroke-width="1" opacity=".35" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-seal" viewBox="0 0 60 80">
+            <path d="M18 40L10 76l12-8 6 10 4-32Z" fill="#f6e2df" stroke="#a8814f" stroke-width="1.4" stroke-linejoin="round" />
+            <path d="M42 40l8 36-12-8-6 10-4-32Z" fill="#e7ede0" stroke="#a8814f" stroke-width="1.4" stroke-linejoin="round" />
+            <circle cx="30" cy="28" r="21" fill="#fbf4ea" stroke="#a8814f" stroke-width="1.6" />
+            <circle cx="30" cy="28" r="15" fill="none" stroke="#a8814f" stroke-width="1" stroke-dasharray="1.5 3" />
+            <path d="M30 18l2.6 6.4 6.9.5-5.3 4.4 1.7 6.7L30 32.4l-5.9 3.6 1.7-6.7-5.3-4.4 6.9-.5Z" fill="none" stroke="#a8814f" stroke-width="1.2" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-cloche" viewBox="0 0 200 140">
+            <path d="M20 118C20 60 56 26 100 26s80 34 80 92Z" fill="#f7f1e8" stroke="#a8814f" stroke-width="2" stroke-linejoin="round" />
+            <path d="M46 100c2-26 18-46 40-54" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" />
+            <path d="M36 104h128" stroke="#a8814f" stroke-width="1" opacity=".4" />
+            <rect x="8" y="116" width="184" height="12" rx="6" fill="#efe4d2" stroke="#a8814f" stroke-width="2" />
+            <circle cx="100" cy="20" r="8" fill="#efe4d2" stroke="#a8814f" stroke-width="2" />
+        </symbol>
+        <symbol id="i-egg-mini" viewBox="0 0 20 24">
+            <path d="M10 1.5C5 1.5 2 10.5 2 15c0 4.6 3.6 7.5 8 7.5s8-2.9 8-7.5c0-4.5-3-13.5-8-13.5Z" />
+        </symbol>
+        <!-- Iconos de línea -->
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
+                <path d="m21.5 7-8.47 5.4a1.94 1.94 0 0 1-2.06 0L2.5 7" />
+            </g>
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </g>
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+            <path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-dice" viewBox="0 0 24 24">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <g fill="currentColor">
+                <circle cx="8.5" cy="8.5" r="1.2" />
+                <circle cx="15.5" cy="8.5" r="1.2" />
+                <circle cx="12" cy="12" r="1.2" />
+                <circle cx="8.5" cy="15.5" r="1.2" />
+                <circle cx="15.5" cy="15.5" r="1.2" />
+            </g>
+        </symbol>
+        <symbol id="i-chev-left" viewBox="0 0 24 24">
+            <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-chev-right" viewBox="0 0 24 24">
+            <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24">
+            <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </symbol>
+    </svg>
 
-    <nav class="section-nav no-print">
+    <a href="#portfolio" class="skip-link">Saltar al contenido</a>
+
+    <nav class="section-nav no-print" aria-label="Secciones">
         <div class="container nav-inner">
+            <a href="#inicio" class="nav-brand" aria-label="Volver al inicio">
+                <span class="monogram" aria-hidden="true">YD</span>
+                <span class="nav-brand-name">Yuliana Díaz</span>
+            </a>
             <div class="nav-tabs">
-                <a href="#portfolio" class="nav-tab active">Portfolio</a>
+                <span class="nav-blob" aria-hidden="true"></span>
+                <a href="#portfolio" class="nav-tab">Portfolio</a>
                 <a href="#cv-section" class="nav-tab">Experiencia</a>
                 <a href="#contact-section" class="nav-tab">Encargos</a>
             </div>
         </div>
+        <div class="nav-progress" aria-hidden="true"><span></span></div>
     </nav>
 
+    <!-- Encabezado del Perfil (Hero) -->
+    <header class="hero" id="inicio">
+        <!-- Utensilios flotantes: se pueden tocar y arrastrar -->
+        <div class="utensils" id="utensils">
+            <button type="button" class="utensil" data-utensil="whisk" aria-label="Batidor">
+                <span class="u-bob"><span class="u-act"><svg viewBox="0 0 60 120" aria-hidden="true"><use href="#i-whisk" /></svg></span></span>
+            </button>
+            <button type="button" class="utensil u-desk" data-utensil="rolling-pin" aria-label="Rodillo">
+                <span class="u-bob" style="--bob-delay:-2s"><span class="u-act"><svg viewBox="0 0 160 44" aria-hidden="true"><use href="#i-rolling-pin" /></svg></span></span>
+            </button>
+            <button type="button" class="utensil" data-utensil="piping-bag" aria-label="Manga pastelera">
+                <span class="u-bob" style="--bob-delay:-1s"><span class="u-act"><svg viewBox="0 0 100 120" aria-hidden="true"><use href="#i-piping-bag" /></svg></span></span>
+            </button>
+            <button type="button" class="utensil u-desk" data-utensil="spoon" aria-label="Cuchara de madera">
+                <span class="u-bob" style="--bob-delay:-3s"><span class="u-act"><svg viewBox="0 0 40 130" aria-hidden="true"><use href="#i-spoon" /></svg></span></span>
+            </button>
+            <button type="button" class="utensil" data-utensil="egg" id="the-egg" aria-label="Un huevo… sospechoso">
+                <span class="u-bob" style="--bob-delay:-.5s"><span class="u-act">
+                    <svg viewBox="0 0 80 100" aria-hidden="true" class="egg-svg">
+                        <defs>
+                            <linearGradient id="fab-gold" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#f1dfae" />
+                                <stop offset=".55" stop-color="#cfa968" />
+                                <stop offset="1" stop-color="#a8814f" />
+                            </linearGradient>
+                            <clipPath id="fab-clip">
+                                <path d="M40 5C19 5 7 42 7 62c0 20 15 34 33 34s33-14 33-34C73 42 61 5 40 5Z" />
+                            </clipPath>
+                        </defs>
+                        <g class="egg-whole">
+                            <path d="M40 5C19 5 7 42 7 62c0 20 15 34 33 34s33-14 33-34C73 42 61 5 40 5Z" fill="#fbf4ea" stroke="#a8814f" stroke-width="1.8" />
+                            <path d="M20 32q-4 14-2 24" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" />
+                            <path class="egg-crack" d="M9 56l11-6 7 10 10-12 8 12 9-11 8 9 9-6" fill="none" stroke="#a8814f" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+                        </g>
+                        <g class="egg-faberge">
+                            <path d="M40 5C19 5 7 42 7 62c0 20 15 34 33 34s33-14 33-34C73 42 61 5 40 5Z" fill="url(#fab-gold)" />
+                            <g clip-path="url(#fab-clip)" stroke="#fff7e2" stroke-width="1" opacity=".75" fill="none">
+                                <path d="M-20 20l100 100M-20 40l100 100M-20 0l100 100M-20 -20l100 100M0 -20l100 100M20 -20l100 100" />
+                                <path d="M100 20L0 120M100 40L0 140M100 0L0 100M100 -20L0 80M80 -20L-20 80M60 -20L-40 80" />
+                            </g>
+                            <path d="M8 58q32 10 64 0" fill="none" stroke="#fff7e2" stroke-width="3" />
+                            <g fill="#9e2b35" stroke="#fff7e2" stroke-width=".8">
+                                <circle cx="40" cy="63" r="3.2" />
+                                <circle cx="22" cy="60.5" r="2.4" />
+                                <circle cx="58" cy="60.5" r="2.4" />
+                            </g>
+                            <g fill="#3f6b5c">
+                                <circle cx="40" cy="34" r="2" />
+                                <circle cx="30" cy="44" r="1.6" />
+                                <circle cx="50" cy="44" r="1.6" />
+                                <circle cx="40" cy="82" r="2" />
+                            </g>
+                            <path d="M33 8q7-8 14 0Z" fill="#cfa968" stroke="#a8814f" stroke-width="1" />
+                            <circle cx="40" cy="3.5" r="2.5" fill="#9e2b35" stroke="#a8814f" stroke-width=".8" />
+                            <path d="M40 5C19 5 7 42 7 62c0 20 15 34 33 34s33-14 33-34C73 42 61 5 40 5Z" fill="none" stroke="#a8814f" stroke-width="1.8" />
+                        </g>
+                    </svg>
+                </span></span>
+            </button>
+            <button type="button" class="utensil u-desk" data-utensil="mitt" aria-label="Manopla de horno">
+                <span class="u-bob" style="--bob-delay:-2.5s"><span class="u-act"><svg viewBox="0 0 90 110" aria-hidden="true"><use href="#i-mitt" /></svg></span></span>
+            </button>
+            <button type="button" class="utensil" data-utensil="cupcake" aria-label="Cupcake">
+                <span class="u-bob" style="--bob-delay:-1.5s"><span class="u-act"><svg viewBox="0 0 100 110" aria-hidden="true"><use href="#i-cupcake" /></svg></span></span>
+            </button>
+            <button type="button" class="utensil" data-utensil="macaron" aria-label="Macaron">
+                <span class="u-bob" style="--bob-delay:-3.5s"><span class="u-act"><svg viewBox="0 0 100 76" aria-hidden="true"><use href="#i-macaron" /></svg></span></span>
+            </button>
+        </div>
+
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <p class="hero-hello script">¡Hola! soy</p>
+                <h1 id="profile-name" class="hero-name">Cargando...</h1>
+                <p class="hero-subtitle">Chef Internacional en Pastelería</p>
+                <p id="profile-bio" class="hero-bio"></p>
+
+                <div class="hero-contact">
+                    <a id="profile-contact" href="#" class="hero-contact-item">
+                        <svg width="17" height="17" aria-hidden="true"><use href="#i-mail" /></svg>
+                        <span id="profile-contact-text">Contactar</span>
+                    </a>
+                    <span id="profile-phone" class="hero-contact-item" style="display:none;">
+                        <svg width="17" height="17" aria-hidden="true"><use href="#i-phone" /></svg>
+                        <span id="profile-phone-text"></span>
+                    </span>
+                    <a id="profile-ig" href="#" target="_blank" rel="noopener" class="hero-contact-item" style="display:none;">
+                        <svg width="17" height="17" aria-hidden="true"><use href="#i-instagram" /></svg>
+                        <span id="profile-ig-text"></span>
+                    </a>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#portfolio" class="btn btn-dark">Ver mis creaciones</a>
+                    <a href="#contact-section" class="btn btn-line">Haz tu encargo</a>
+                </div>
+
+                <p class="hero-hint"><span class="hint-star" aria-hidden="true">✦</span> Esta web guarda <em>seis secretos dulces</em>. ¿Te animas a descubrirlos?</p>
+            </div>
+
+            <div class="hero-photo-wrap">
+                <button type="button" class="hero-photo-btn" id="photo-btn" aria-label="Foto de perfil">
+                    <img id="profile-img" src="" alt="Foto de perfil" class="hero-photo hidden">
+                </button>
+                <svg class="hero-toque" viewBox="0 0 120 100" aria-hidden="true"><use href="#i-toque" /></svg>
+            </div>
+        </div>
+    </header>
+
     <!-- Floating Admin Button -->
-    <button id="btn-admin-toggle" class="fab-admin hidden no-print" title="Panel Admin">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    <button id="btn-admin-toggle" class="fab-admin hidden no-print" title="Panel Admin" aria-label="Panel Admin">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
             stroke-linecap="round" stroke-linejoin="round">
             <path
                 d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
@@ -117,7 +326,7 @@
                                 placeholder="Chef Internacional | CEGAVEN | 2021 - 2022"></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary w-full">Guardar Perfil</button>
+                    <button type="submit" class="btn btn-dark w-full">Guardar Perfil</button>
                     <div id="profile-status" class="status-msg"></div>
                 </form>
             </div>
@@ -147,7 +356,7 @@
                             <input type="file" id="d-sec-img" accept="image/*" multiple>
                         </div>
                     </div>
-                    <button type="submit" id="submit-btn" class="btn btn-primary w-full">Guardar Postre</button>
+                    <button type="submit" id="submit-btn" class="btn btn-dark w-full">Guardar Postre</button>
                     <div id="upload-status" class="status-msg"></div>
                 </form>
             </div>
@@ -155,151 +364,321 @@
     </section>
 
     <!-- Galería de Postres -->
-    <main id="portfolio" class="container" style="padding-top: 2rem;">
+    <main id="portfolio" class="section section-vitrina">
+        <div class="container">
+            <header class="section-head" data-reveal>
+                <p class="eyebrow script">recién salido del horno</p>
+                <h2 class="section-title">La vitrina</h2>
+                <span class="ornament" aria-hidden="true"></span>
+                <p class="section-lead">Toca cualquier creación para verla de cerca. Guarda tus antojos con el corazón y te los apunto en el encargo.</p>
+            </header>
 
-        <div id="dessert-grid" class="dessert-grid">
-            <!-- Los postres se cargarán aquí dinámicamente -->
+            <div class="vitrina-tools" data-reveal>
+                <div id="origin-chips" class="chips" role="group" aria-label="Filtrar postres"></div>
+                <button type="button" id="btn-surprise" class="btn btn-line btn-surprise">
+                    <svg width="18" height="18" aria-hidden="true"><use href="#i-dice" /></svg>
+                    Sorpréndeme
+                </button>
+            </div>
+
+            <div id="dessert-grid" class="dessert-grid">
+                <!-- Los postres se cargarán aquí dinámicamente -->
+            </div>
         </div>
     </main>
 
     <!-- Sección Currículum -->
-    <section id="cv-section" class="container cv-section hidden">
+    <section id="cv-section" class="section cv-section hidden">
+        <div class="container">
+            <header class="section-head" data-reveal>
+                <p class="eyebrow script">la receta de mi carrera</p>
+                <h2 class="section-title">Experiencia, capa a capa</h2>
+                <span class="ornament" aria-hidden="true"></span>
+                <p class="section-lead">Cada piso de esta tarta es una etapa de mi camino. Toca una capa para descubrir qué lleva dentro.</p>
+            </header>
 
+            <div class="cv-layout">
+                <div class="cake-wrap" id="cake-wrap">
+                    <button type="button" class="cake-cherry" id="cake-cherry" aria-label="La guinda del pastel">
+                        <svg viewBox="0 0 60 70" aria-hidden="true"><use href="#i-cherry" /></svg>
+                    </button>
+                    <div id="cv-experience" class="cake"></div>
+                    <div class="cake-stand" aria-hidden="true"></div>
+                </div>
 
-        <h3 class="cv-heading">Experiencia Profesional</h3>
-        <div id="cv-experience" class="cv-timeline"></div>
-
-        <div class="cv-grid cv-grid-3">
-            <div class="cv-column">
-                <h3 class="cv-heading">Formación Académica</h3>
-                <div id="cv-titles" class="cv-content"></div>
-            </div>
-            <div class="cv-column">
-                <h3 class="cv-heading">Especialidades</h3>
-                <div id="cv-specialties" class="cv-content"></div>
-            </div>
-            <div class="cv-column">
-                <h3 class="cv-heading">Idiomas</h3>
-                <div id="cv-languages" class="cv-content"></div>
+                <aside class="cv-side">
+                    <div class="recipe-card" data-reveal>
+                        <h3 class="recipe-title script">Ingredientes secretos</h3>
+                        <ul id="cv-specialties" class="ingredients"></ul>
+                    </div>
+                    <div class="side-block" data-reveal>
+                        <h3 class="side-title">Formación</h3>
+                        <div id="cv-titles" class="diplomas"></div>
+                    </div>
+                    <div class="side-block" data-reveal>
+                        <h3 class="side-title">Idiomas</h3>
+                        <div id="cv-languages" class="bubbles"></div>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- Modal de Detalles del Postre -->
-    <div id="dessert-modal" class="modal no-print">
-        <div class="modal-content">
-            <button class="close-modal" data-target="dessert-modal">&times;</button>
-            <div class="modal-body">
-                <div class="modal-image-col">
-                    <img id="modal-main-img" src="" alt="Postre principal">
-                    <div id="modal-sec-imgs" class="secondary-gallery">
-                        <!-- Fotos secundarias -->
+    <!-- Encargos: diseñador de tartas + carta de encargo -->
+    <section id="contact-section" class="section contact-section">
+        <div class="container">
+            <header class="section-head" data-reveal>
+                <p class="eyebrow script">manos a la masa</p>
+                <h2 class="section-title">Haz tu encargo</h2>
+                <span class="ornament" aria-hidden="true"></span>
+                <p class="section-lead">Especializada en tartas personalizadas y repostería artesanal para cumpleaños, bodas o celebraciones íntimas. Diseña tu tarta soñada y déjame los detalles de tu evento.</p>
+            </header>
+
+            <div class="order-layout">
+                <div class="builder" id="builder" data-reveal>
+                    <div class="builder-head">
+                        <h3 class="builder-title">Diseña tu tarta</h3>
+                        <p class="builder-sub script">juega, que no engorda</p>
                     </div>
+                    <div class="builder-stage">
+                        <svg id="cake-preview" class="cake-preview" viewBox="0 0 300 290" role="img" aria-label="Vista previa de tu tarta"></svg>
+                    </div>
+
+                    <div class="builder-controls">
+                        <div class="ctrl">
+                            <label for="b-people" class="ctrl-label">Para cuántas personas <output id="b-people-out" for="b-people">12</output></label>
+                            <input type="range" id="b-people" min="6" max="60" step="2" value="12">
+                        </div>
+                        <fieldset class="ctrl">
+                            <legend class="ctrl-label">Bizcocho</legend>
+                            <div class="swatches" data-group="sponge"></div>
+                        </fieldset>
+                        <fieldset class="ctrl">
+                            <legend class="ctrl-label">Relleno</legend>
+                            <div class="swatches" data-group="filling"></div>
+                        </fieldset>
+                        <fieldset class="ctrl">
+                            <legend class="ctrl-label">Cobertura</legend>
+                            <div class="swatches" data-group="topping"></div>
+                        </fieldset>
+                        <fieldset class="ctrl">
+                            <legend class="ctrl-label">Decoración <small>(elige varias)</small></legend>
+                            <div class="swatches" data-group="decor"></div>
+                        </fieldset>
+                    </div>
+
+                    <button type="button" id="btn-builder-apply" class="btn btn-line w-full">Añadir a mi encargo</button>
                 </div>
-                <div class="modal-info-col">
-                    <h2 id="modal-name"></h2>
-                    <span id="modal-origin" class="origin-tag"></span>
-                    <p id="modal-desc" class="desc-text"></p>
+
+                <div class="ticket-wrap" data-reveal>
+                    <div class="ticket" id="ticket">
+                        <div class="ticket-head">
+                            <span class="monogram monogram-lg" aria-hidden="true">YD</span>
+                            <p class="ticket-brand">Carta de encargo</p>
+                            <p class="ticket-meta">Nº <span id="ticket-no">0001</span> · <span id="ticket-date"></span></p>
+                        </div>
+
+                        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+                            <!-- Replace with your Access Key -->
+                            <input type="hidden" name="access_key" value="825cc07c-e77a-44c9-8bcc-2046e1cc7eb2">
+
+                            <!-- Optional: Redirection after successful submission -->
+                            <!-- <input type="hidden" name="redirect" value="https://chefyuliana.com/gracias"> -->
+
+                            <input type="hidden" name="diseno_tarta" id="f-design">
+                            <input type="hidden" name="antojos" id="f-antojos">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Teléfono (Opcional)</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Fecha del evento (Opcional)</label>
+                                    <input type="date" id="date" name="fecha_evento">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">¿Qué estás buscando?</label>
+                                <input type="text" id="subject" name="subject" required
+                                    placeholder="Ej. Tarta de cumpleaños, pastel de boda, mesa dulce...">
+                            </div>
+
+                            <div class="antojos hidden" id="antojos-box">
+                                <span class="antojos-label">Tus antojos</span>
+                                <div class="antojos-list" id="antojos-list"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mensaje / Detalles adicionales</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="Cuéntame para cuántas personas es, si hay alergias, etc."></textarea>
+                            </div>
+
+                            <!-- Web3Forms Honeypot for Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <button type="submit" class="btn btn-dark w-full btn-send" id="btn-send">
+                                <span class="btn-send-label">Enviar encargo</span>
+                            </button>
+                            <p class="form-status" id="form-status" role="status"></p>
+                        </form>
+
+                        <div class="ticket-done" id="ticket-done" hidden>
+                            <svg class="wax-seal" viewBox="0 0 120 120" aria-hidden="true">
+                                <defs>
+                                    <radialGradient id="wax" cx=".38" cy=".32" r=".75">
+                                        <stop offset="0" stop-color="#c2414c" />
+                                        <stop offset=".6" stop-color="#9e2b35" />
+                                        <stop offset="1" stop-color="#6e1b23" />
+                                    </radialGradient>
+                                </defs>
+                                <path d="M114.0 60.0 L115.3 64.8 L113.6 69.5 L110.6 73.6 L108.5 77.7 L107.7 82.3 L106.6 86.9 L103.8 90.7 L99.8 93.4 L95.9 95.9 L92.4 98.6 L88.8 101.1 L84.6 102.7 L80.6 104.1 L77.1 107.0 L73.8 111.4 L69.7 115.2 L64.9 116.1 L60.0 114.2 L55.5 111.8 L51.1 110.7 L46.5 110.4 L42.1 109.0 L38.3 106.5 L34.8 103.7 L30.9 101.5 L27.1 99.2 L24.1 95.9 L22.0 91.9 L19.3 88.5 L15.0 86.0 L9.9 83.3 L6.6 79.5 L6.2 74.4 L7.8 69.2 L8.9 64.5 L9.1 60.0 L9.3 55.6 L10.5 51.3 L12.0 47.1 L12.7 42.8 L13.0 38.1 L14.5 33.7 L17.8 30.4 L21.4 27.6 L23.9 23.9 L25.5 18.9 L27.8 14.0 L31.9 11.4 L37.2 11.1 L42.3 11.5 L46.9 11.2 L51.3 10.6 L55.7 10.7 L60.0 11.1 L64.3 10.6 L69.0 9.0 L73.9 8.1 L78.4 9.4 L82.1 12.7 L85.6 15.7 L90.0 17.2 L95.0 18.3 L99.2 20.8 L101.5 25.1 L102.6 30.1 L103.8 34.7 L105.4 38.8 L106.5 43.1 L107.0 47.4 L108.1 51.5 L110.8 55.6Z" fill="url(#wax)" />
+                                <circle cx="60" cy="60" r="36" fill="none" stroke="#6e1b23" stroke-width="2" opacity=".55" />
+                                <circle cx="60" cy="60" r="33" fill="none" stroke="#e48a92" stroke-width=".8" opacity=".35" />
+                                <text x="60" y="71" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="600" font-size="34" fill="#e48a92" opacity=".35">YD</text>
+                                <text x="60" y="70" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="600" font-size="34" fill="#6e1b23">YD</text>
+                            </svg>
+                            <p class="ticket-done-title">Encargo recibido</p>
+                            <p>Gracias por escribirme. Tu mensaje ya está en el obrador y te responderé muy pronto con todos los detalles.</p>
+                            <button type="button" class="btn btn-line" id="btn-new-order">Hacer otro encargo</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Contact Form Section -->
-    <section id="contact-section" class="container contact-section">
-        <div class="contact-card">
-            <h2 class="contact-heading">Haz tu encargo</h2>
-            <p class="contact-subheading">Especializada en tartas personalizadas y repostería artesanal para cumpleaños, bodas o celebraciones íntimas. Déjame un mensaje con los detalles de tu evento.</p>
-
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <!-- Replace with your Access Key -->
-                <input type="hidden" name="access_key" value="825cc07c-e77a-44c9-8bcc-2046e1cc7eb2">
-
-                <!-- Optional: Redirection after successful submission -->
-                <!-- <input type="hidden" name="redirect" value="https://chefyuliana.com/gracias"> -->
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Teléfono (Opcional)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Fecha del evento (Opcional)</label>
-                        <input type="date" id="date" name="fecha_evento">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">¿Qué estás buscando?</label>
-                    <input type="text" id="subject" name="subject" required
-                        placeholder="Ej. Tarta de cumpleaños, pastel de boda, mesa dulce...">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Mensaje / Detalles adicionales</label>
-                    <textarea id="message" name="message" rows="4" required
-                        placeholder="Cuéntame para cuántas personas es, si hay alergias, etc."></textarea>
-                </div>
-
-                <!-- Web3Forms Honeypot for Spam Protection -->
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <button type="submit" class="btn btn-primary w-full">Enviar Mensaje</button>
-            </form>
-        </div>
     </section>
+
     <!-- Footer / Contacto -->
     <footer id="site-footer" class="site-footer">
         <div class="container footer-content">
+            <button type="button" class="cookie" id="cookie" aria-label="Un macaron recién hecho">
+                <svg viewBox="0 0 100 80" aria-hidden="true">
+                    <defs>
+                        <mask id="cookie-bites" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="80">
+                            <rect width="100" height="80" fill="#fff" />
+                        </mask>
+                    </defs>
+                    <g mask="url(#cookie-bites)">
+                        <path d="M10 48h80v6C90 74 10 74 10 54Z" fill="#ecd2d0" stroke="#c9a46c" stroke-width="1.6" stroke-linejoin="round" />
+                        <rect x="13" y="37" width="74" height="13" rx="6.5" fill="#fffaf2" stroke="#c9a46c" stroke-width="1.4" />
+                        <path d="M10 37C10 5 90 5 90 37Z" fill="#ecd2d0" stroke="#c9a46c" stroke-width="1.6" stroke-linejoin="round" />
+                        <path d="M12 37q4.75 4 9.5 0t9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0" fill="none" stroke="#c9a46c" stroke-width="1.1" />
+                        <path d="M28 20q10-6 22-6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".6" />
+                    </g>
+                </svg>
+            </button>
             <div class="footer-cta">
                 <h2>¿Te gustaría probar mis creaciones?</h2>
                 <p>Especializada en tartas y dulces artesanales para cumpleaños, bodas y celebraciones íntimas. ¡Haz tu encargo personalizado!</p>
             </div>
             <div class="footer-links">
                 <a id="footer-email" href="#" class="footer-link" title="Email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
+                    <svg width="18" height="18" aria-hidden="true"><use href="#i-mail" /></svg>
                     <span id="footer-email-text">Contactar</span>
                 </a>
                 <a id="footer-phone-link" href="#" class="footer-link" title="Teléfono" style="display:none;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
+                    <svg width="18" height="18" aria-hidden="true"><use href="#i-phone" /></svg>
                     <span id="footer-phone-text"></span>
                 </a>
-                <a id="footer-instagram" href="#" target="_blank" class="footer-link" title="Instagram"
+                <a id="footer-instagram" href="#" target="_blank" rel="noopener" class="footer-link" title="Instagram"
                     style="display:none;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
+                    <svg width="18" height="18" aria-hidden="true"><use href="#i-instagram" /></svg>
                     <span>Instagram</span>
                 </a>
             </div>
             <div class="footer-bottom">
-                <p>© <span id="footer-year"></span> <span id="footer-name"></span> · Chef Internacional en Pastelería
-                </p>
+                <p>© <span id="footer-year"></span> <span id="footer-name"></span> · Chef Internacional en Pastelería</p>
+                <p class="footer-made script">hecho con harina, mantequilla y mucho cariño</p>
             </div>
         </div>
     </footer>
+
+    <!-- Modal de Detalles del Postre -->
+    <div id="dessert-modal" class="modal no-print" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+        <div class="modal-content">
+            <button class="close-modal" data-target="dessert-modal" aria-label="Cerrar">
+                <svg width="20" height="20" aria-hidden="true"><use href="#i-close" /></svg>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image-col">
+                    <div class="modal-img-frame">
+                        <img id="modal-main-img" src="" alt="Postre principal">
+                        <div class="cloche" id="cloche" aria-hidden="true">
+                            <svg viewBox="0 0 200 140"><use href="#i-cloche" /></svg>
+                        </div>
+                    </div>
+                    <div id="modal-sec-imgs" class="secondary-gallery">
+                        <!-- Fotos secundarias -->
+                    </div>
+                </div>
+                <div class="modal-info-col">
+                    <span id="modal-origin" class="stamp"></span>
+                    <h2 id="modal-name"></h2>
+                    <p id="modal-desc" class="desc-text"></p>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-line btn-fav" id="modal-fav" aria-pressed="false">
+                            <svg width="18" height="18" aria-hidden="true"><use href="#i-heart" /></svg>
+                            <span>Antojo</span>
+                        </button>
+                        <button type="button" class="btn btn-dark" id="modal-order">¡Lo quiero!</button>
+                    </div>
+                    <div class="modal-nav">
+                        <button type="button" class="icon-btn" id="modal-prev" aria-label="Postre anterior">
+                            <svg width="18" height="18" aria-hidden="true"><use href="#i-chev-left" /></svg>
+                        </button>
+                        <span id="modal-count" class="modal-count"></span>
+                        <button type="button" class="icon-btn" id="modal-next" aria-label="Postre siguiente">
+                            <svg width="18" height="18" aria-hidden="true"><use href="#i-chev-right" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recetario secreto (huevos de Pascua) -->
+    <div id="egg-modal" class="modal no-print" role="dialog" aria-modal="true" aria-labelledby="egg-modal-title">
+        <div class="modal-content egg-content">
+            <button class="close-modal" data-target="egg-modal" aria-label="Cerrar">
+                <svg width="20" height="20" aria-hidden="true"><use href="#i-close" /></svg>
+            </button>
+            <p class="eyebrow script">shhh… es secreto</p>
+            <h2 id="egg-modal-title">Recetario secreto</h2>
+            <p class="egg-progress-text"><span id="egg-count-text">0 de 6</span> secretos descubiertos</p>
+            <div class="egg-meter"><span id="egg-meter-fill"></span></div>
+            <ul id="egg-list" class="egg-list"></ul>
+            <div id="egg-secret" class="egg-secret" hidden>
+                <p class="script">Truco de chef desbloqueado</p>
+                <p>Para un merengue perfecto, usa claras a temperatura ambiente y unas gotas de limón. Si al girar el bol boca abajo no se cae… ¡está a punto de nieve!</p>
+            </div>
+            <button type="button" class="btn btn-line btn-sm" id="egg-reset">Volver a esconderlos</button>
+        </div>
+    </div>
+
+    <button type="button" id="egg-badge" class="egg-badge no-print" hidden aria-label="Ver secretos descubiertos">
+        <svg width="13" height="16" aria-hidden="true"><use href="#i-egg-mini" /></svg>
+        <span id="egg-badge-count">0/6</span>
+    </button>
+
+    <button type="button" id="to-top" class="to-top no-print" aria-label="Volver arriba">
+        <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+    </button>
+
+    <canvas id="fx-canvas" class="fx-canvas" aria-hidden="true"></canvas>
+    <div id="toasts" class="toasts" aria-live="polite"></div>
 
     <!-- Overlay de carga -->
     <div id="loading-overlay" class="loading-overlay hidden no-print">
@@ -308,6 +687,7 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="fun.js"></script>
 </body>
 
 </html>

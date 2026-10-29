@@ -316,7 +316,7 @@ def draw_cv_page(canvas, doc, data, styles):
                 p.drawOn(canvas, mx + 2, my - ph)
                 my -= ph + 1 * mm
             
-            my -= 6 * mm
+            my -= 4 * mm
 
     # Education / Titles
     if profile.get("titles") and my > 50 * mm:

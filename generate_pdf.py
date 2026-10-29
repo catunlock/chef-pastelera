@@ -193,8 +193,15 @@ def draw_cv_page(canvas, doc, data, styles):
         p = canvas.beginPath()
         p.circle(cx, cy, photo_size / 2)
         canvas.clipPath(p, stroke=0)
-        canvas.drawImage(str(img_path), photo_x, photo_y, photo_size, photo_size,
-                         preserveAspectRatio=True, mask='auto')
+        # Crop to a square (top-aligned) so the photo fills the whole circle
+        from PIL import Image as PILImage
+        from reportlab.lib.utils import ImageReader
+        pil_img = PILImage.open(img_path)
+        side = min(pil_img.size)
+        left = (pil_img.width - side) // 2
+        pil_img = pil_img.crop((left, 0, left + side, side))
+        canvas.drawImage(ImageReader(pil_img), photo_x, photo_y, photo_size, photo_size,
+                         mask='auto')
         canvas.restoreState()
         
         sy = photo_y - 8 * mm

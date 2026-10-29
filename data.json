@@ -1,15 +1,27 @@
 {
   "profile": {
     "name": "Yuliana Díaz",
-    "image": "images/profile.png",
+    "image": "images/profile.jpg",
     "bio": "Chef internacional en pastelería con formación y experiencia en la creación de postres de alta gama, arte en azúcar y dulcería tradicional. Especializada en pastelería fina, técnicas de azúcar artístico y en la preservación e innovación de recetas típicas. Creativa, perfeccionista y apasionada por el detalle. Fusiono técnicas clásicas y contemporáneas para ofrecer experiencias sensoriales únicas a través del sabor y la estética.",
     "contact": "hola@chefyuliana.com",
     "instagram": "https://www.instagram.com/chefyuliana",
     "experience": [
       {
+        "role": "Camarera / Cocinera",
+        "company": "Churrería / Chocolatería Fco. Romero",
+        "period": "06/2026 - Presente",
+        "country": "Barcelona, España",
+        "duties": [
+          "Gestión integral de la barra: Atención al cliente, toma de comandas y cobro en caja.",
+          "Servicio de cafetería: Elaboración de cafés, infusiones y bebidas calientes con estándares de calidad.",
+          "Área de cocina rápida: Preparación, plancha y armado de bocadillos y raciones.",
+          "Control y mantenimiento: Reposición de género, limpieza de la zona de trabajo y cumplimiento estricto de las normas de higiene y seguridad alimentaria (APPCC)."
+        ]
+      },
+      {
         "role": "Cocinera / Responsable de Cocina",
         "company": "Reserva Ibérica",
-        "period": "07/2024 - Presente",
+        "period": "07/2024 - 11/2025",
         "country": "Barcelona, España",
         "duties": [
           "Servicio y salida de comandas: Elaboración y pase de platos asegurando el ritmo y calidad del servicio.",
